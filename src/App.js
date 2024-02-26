@@ -1,14 +1,11 @@
 import './App.css';
-import Header from './components/Header';
 import HomePage from './pages/HomePage';
-import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App font-opensans">
       <HomePage/>
-      <Header/>
-      <Footer/>
+      
     </div>
   );
 }
