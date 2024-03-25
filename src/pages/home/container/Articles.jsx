@@ -1,7 +1,7 @@
 import React from 'react'
 import ArticleCard from '../../../components/ArticleCard'
 import {FaArrowRight} from 'react-icons/fa'
-import { UseSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { changeCount } from '../../../store/actions/countActions'
 
 const Article = () => {
