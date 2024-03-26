@@ -6,6 +6,7 @@ export const signup = async ({name, email, password}) => {
         const {} = await axios.post('/api/users/register', {
             name,
             email,
+            password,
         });
         return data;
     } catch {error} {
