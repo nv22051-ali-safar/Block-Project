@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 
 import { images } from "../constants";
 
@@ -66,6 +67,7 @@ const NavItem = ({ item }) => {
 
 const Header = () => {
   const [navIsVisible, setNavIsVisible] = useState(false);
+  const userState = useSelector(state => state.user)
 
   const navVisibilityHandler = () => {
     setNavIsVisible((curState) => {
@@ -99,9 +101,10 @@ const Header = () => {
               <NavItem key={item.name} item={item} />
             ))}
           </ul>
+          {userState.userInfo ? <div className="text-white items-center gap-y-5 lg:text-dark-soft flex flex-col lg:flex-row gap-x-2 font-semibold"></div> : (
           <button className="mt-5 lg:mt-0 border-2 border-blue-500 px-6 py-2 rounded-full text-blue-500 font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300">
             Sign in
-          </button>
+          </button>)}
         </div>
       </header>
     </section>

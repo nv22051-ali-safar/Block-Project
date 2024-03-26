@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const signup = async ({name, email, password}) => {
     try {
-        const {} = await axios.post('/api/users/register', {
+        const {data} = await axios.post('/api/users/register', {
             name,
             email,
             password,
