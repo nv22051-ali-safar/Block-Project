@@ -62,3 +62,22 @@ export const login = async ({ email, password }) => {
         throw new Error(error.message);
       } 
   }
+
+  
+  export const updateProfilePicture = async ({token, formDta}) => {
+    try {
+
+      const config = {
+        headers: {
+          "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${token}`,
+        }
+      }
+      const { data } = await axios.put("/api/users/updateProfilePicture", formDta, config);
+      return data;
+    } catch (error) {
+      if (error.response && error.response.data.message)
+        throw new Error(error.response.data.message);
+      throw new Error(error.message);
+    } 
+}
