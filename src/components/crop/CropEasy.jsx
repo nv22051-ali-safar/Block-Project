@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Cropper from "react-easy-crop"
 import {useMutation, useQueryClient} from '@tanstack/react-query'
-import { updateProfile } from '../../services/index/users'
+import { updateProfilePicture } from '../../services/index/users'
 import {useDispatch, useSelector} from "react-redux"
 import { userActions } from '../../store/reducers/userReducers'
 import {toast} from 'react-hot-toast'
@@ -17,7 +17,7 @@ const cropEasy = (photo, setOpenCrop) => {
 
   const { mutate, isLoading } = useMutation({
     mutationFn: ({ token, formDta }) => {
-        return updateProfile({
+        return updateProfilePicture({
             token: token,
             formDta: formDta,
         })
